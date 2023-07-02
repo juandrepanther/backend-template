@@ -1,7 +1,8 @@
 import { Router } from 'express'
-import { login } from './routes/login'
+import { login } from './middlewares/login'
+import { register } from './middlewares/register'
 
 export const router = Router()
 
-// {API}/user
 router.use('/login', login)
+router.use('/register', register)

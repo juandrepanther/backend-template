@@ -3,7 +3,7 @@ The template was created by running these commands:
 - yarn init
 - yarn add express dotenv mongoose bcryptjs jsonwebtoken cookie-parser
 - yarn add -D nodemon
-- yarn add -D typescript ts-node @types/node @types/express
+- yarn add -D typescript ts-node @types/node @types/express @types/bcryptjs
 - tsc --init
 
 ## First Run
@@ -23,4 +23,15 @@ The template was created by running these commands:
 
 ```js
 app.get("/login/", middleware, middleware, handler);
+```
+
+## POST request with VScode Thunder Client
+
+Insert data in the Body => JSON Tab
+
+```json
+{
+  "username": "hello",
+  "password": "password12345"
+}
 ```
