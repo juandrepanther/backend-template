@@ -1,9 +1,13 @@
 import jwt, { JwtPayload } from 'jsonwebtoken'
-import { RequestHandler } from 'express'
+import { RequestHandler, Request } from 'express'
 
 const secret = process.env.JWT_SECRET || 'secret'
 
-export const auth: RequestHandler = (req, res, next) => {
+interface AuthenticatedRequest extends Request {
+  username?: string
+}
+
+export const auth: RequestHandler = (req: AuthenticatedRequest, res, next) => {
   // get token from header
   const token = req.header('x-auth-token')
 
@@ -12,7 +16,7 @@ export const auth: RequestHandler = (req, res, next) => {
     return res.status(401).json({ errors: [{ msg: 'authorization denied' }] })
   }
 
-  // Verify token
+  // verify token
   try {
     const decoded = jwt.verify(token, secret) as JwtPayload
 
@@ -20,9 +24,8 @@ export const auth: RequestHandler = (req, res, next) => {
       return res.status(401).json({ errors: [{ msg: 'Token is not valid' }] })
     }
 
-    req.body.username = decoded.username
-
-    res.status(200).json({ message: 'authenticated request' })
+    // if verified, save it in the request object
+    req.username = decoded.username
 
     next()
   } catch (err) {
