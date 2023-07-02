@@ -1,11 +1,8 @@
 import jwt, { JwtPayload } from 'jsonwebtoken'
-import { RequestHandler, Request } from 'express'
+import { RequestHandler } from 'express'
+import { AuthenticatedRequest } from '../types'
 
 const secret = process.env.JWT_SECRET || 'secret'
-
-interface AuthenticatedRequest extends Request {
-  username?: string
-}
 
 export const auth: RequestHandler = (req: AuthenticatedRequest, res, next) => {
   // get token from header
