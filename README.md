@@ -22,10 +22,14 @@ The template was created by running these commands:
 **Example**
 
 ```js
-app.get("/login/", middleware, middleware, handler);
+//server.ts
+app.use(router);
+
+//router.ts
+app.get("/api/login", middleware, middleware, handler);
 ```
 
-## POST request with VScode Thunder Client
+## POST request with VSCode Thunder Client
 
 Insert data in the Body => JSON Tab
 
