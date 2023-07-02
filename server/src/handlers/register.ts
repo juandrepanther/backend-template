@@ -24,8 +24,6 @@ export const register: RequestHandler = async (req, res) => {
       password: encrypted,
     })
 
-    console.log(newAdmin)
-
     //create admin
     newAdmin.save()
 

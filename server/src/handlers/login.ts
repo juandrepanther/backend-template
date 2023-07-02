@@ -18,9 +18,9 @@ export const login: RequestHandler = async (req, res) => {
       return res.status(401).json({ errors: [{ msg: 'Unauthorized' }] })
     }
 
-    // return token
+    // return token with payload data inside
     const payload = {
-      hello: 'payload',
+      username: adminUser.username,
     }
 
     jwt.sign(payload, secret, { expiresIn: '1d' }, (err, token) => {
