@@ -18,7 +18,7 @@ export const auth: RequestHandler = (req: AuthenticatedRequest, res, next) => {
     const decoded = jwt.verify(token, secret) as JwtPayload
 
     if (!decoded.username) {
-      return res.status(401).json({ errors: [{ msg: 'Token is not valid' }] })
+      return res.status(401).json({ errors: [{ msg: 'token is not valid' }] })
     }
 
     // if verified, save it in the request object

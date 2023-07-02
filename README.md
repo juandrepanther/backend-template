@@ -35,3 +35,7 @@ Insert data in the Body => JSON Tab
   "password": "password12345"
 }
 ```
+
+## References
+
+- [JWT Authentication in React](https://www.permify.co/post/jwt-authentication-in-react/)

@@ -18,7 +18,7 @@ export const login: RequestHandler = async (req, res) => {
       return res.status(401).json({ errors: [{ msg: 'Unauthorized' }] })
     }
 
-    // return token with payload data inside
+    // issue signed token with secret and payload data inside (username)
     const payload = {
       username: adminUser.username,
     }
