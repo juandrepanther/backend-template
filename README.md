@@ -6,9 +6,37 @@ The template was created by running these commands:
 - yarn add -D typescript ts-node @types/node @types/express @types/bcryptjs
 - tsc --init
 
-## Deployed Server
+## Deployed Server on Render services
 
 → https://backend-template-owum.onrender.com/
+
+add:
+
+```json
+"engines": {
+    "node": ">=14.20.1"
+  }
+```
+
+On Render server the Build Command is: yarn install
+
+## For Vercel deployments
+
+1. add in vercel.json:
+
+```json
+{
+  "version": 2,
+  "builds": [{ "src": "build/server.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "build/server.js" }]
+}
+```
+
+2. install Vercel CLI by running: `yarn global add vercel`
+
+3. in the root run command: `vercel` and build the project
+
+Do not forget to add environment variables in the Vercel project!
 
 ## First Run
 
