@@ -6,6 +6,10 @@ The template was created by running these commands:
 - yarn add -D typescript ts-node @types/node @types/express @types/bcryptjs
 - tsc --init
 
+## Deployed Server
+
+→ https://backend-template-owum.onrender.com/
+
 ## First Run
 
 - cd server
