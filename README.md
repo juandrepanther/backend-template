@@ -16,7 +16,7 @@ The template was created by running these commands:
 
 ## DEV NOTES
 
-![DIAGRAM](/server//src//assets/diagram.png)
+![DIAGRAM](/src//assets/diagram.png)
 
 **Middleware**: Middleware functions are functions that have access to the request (req) and response (res) objects and the next() function. They can perform tasks before the request reaches the controller or modify the request/response objects. In this example, to authenticate middleware checks if the request has a valid authorization token. If the token is valid, it calls next() to proceed to the next middleware/controller in the route. If the token is invalid, it sends a 401 Unauthorized response. Middleware functions can be used to add authentication, logging, request parsing, error handling, and more to your application.
 
