@@ -1,3 +1,5 @@
+# Use at least Node v20.6.0 or higher
+
 The template was created by running these commands:
 
 - yarn init
@@ -6,41 +8,8 @@ The template was created by running these commands:
 - yarn add -D typescript ts-node @types/node @types/express @types/bcryptjs
 - tsc --init
 
-## Deployed Server on Render services
-
-→ https://backend-template-owum.onrender.com/
-
-add:
-
-```json
-"engines": {
-    "node": ">=14.20.1"
-  }
-```
-
-On Render server the Build Command is: yarn install
-
-## For Vercel deployments
-
-1. add in vercel.json:
-
-```json
-{
-  "version": 2,
-  "builds": [{ "src": "build/server.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "build/server.js" }]
-}
-```
-
-2. install Vercel CLI by running: `yarn global add vercel`
-
-3. in the root run command: `vercel` and build the project
-
-Do not forget to add environment variables in the Vercel project!
-
 ## First Run
 
-- cd server
 - yarn install
 - yarn start (only for the first run)
 - yarn dev
@@ -57,20 +26,22 @@ Do not forget to add environment variables in the Vercel project!
 
 ```js
 //server.ts
-app.use(router);
+app.use(router)
 
 //router.ts
-app.get("/api/login", middleware, middleware, handler);
+app.get('/api/login', middleware, middleware, handler)
 ```
 
-## POST request with VSCode Thunder Client
+## POST request with VS Code Thunder Client
+
+URL: http://localhost:8080/api/login
 
 Insert data in the Body => JSON Tab
 
 ```json
 {
-  "username": "hello",
-  "password": "password12345"
+  "username": "test",
+  "password": "testpassword"
 }
 ```
 

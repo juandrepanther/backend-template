@@ -4,7 +4,7 @@
   "main": "src/server.js",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && node build/server.js",
+    "start": "tsc && node --env-file .env build/server.js",
     "dev": "nodemon src/server.ts"
   },
   "dependencies": {
@@ -25,6 +25,6 @@
     "typescript": "^5.1.6"
   },
   "engines": {
-    "node": ">=14.20.1"
+    "node": ">=20.6.0"
   }
 }

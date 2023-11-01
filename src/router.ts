@@ -11,4 +11,4 @@ export const router = Router()
 router.use('/api/login', login)
 router.use('/api/register', register)
 
-router.use('/api/data', auth, data)
+router.use('/api/datas', auth, data)
