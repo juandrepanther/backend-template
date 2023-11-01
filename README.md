@@ -10,9 +10,9 @@ The template was created by running these commands:
 
 ## First Run
 
-- yarn install
-- yarn start (only for the first run)
-- yarn dev
+- pnpm install
+- pnpm run start OR yarn start (only for the first run)
+- pnpm run dev OR yarn dev
 
 ## DEV NOTES
 
