@@ -4,7 +4,7 @@ const db_url = process.env.MONGO_URI
 
 export async function connect() {
   await mongoose
-    .connect(db_url, { dbName: 'backend-template-database' })
+    .connect(db_url, { dbName: 'backend-template-database', connectTimeoutMS: 10000 })
     .then(() => {
       console.log('Connected to MongoDB')
     })
